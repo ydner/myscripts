@@ -46,7 +46,7 @@ DEVICE="JOYEUSE"
 
 # The defconfig which should be used. Get it from config.gz from
 # your device or check source
-DEFCONFIG=arch_defconfig
+DEFCONFIG=cust_defconfig
 
 # Specify compiler. 
 # 'clang' or 'gcc'
