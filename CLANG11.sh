@@ -36,7 +36,7 @@ err() {
 KERNEL_DIR="$(pwd)"
 
 # The name of the Kernel, to name the ZIP
-ZIPNAME="Arch_Linux"
+ZIPNAME="Illustrious"
 
 # The name of the device for which the kernel is built
 MODEL="Redmi Note 9 Pro"
@@ -46,7 +46,7 @@ DEVICE="JOYEUSE"
 
 # The defconfig which should be used. Get it from config.gz from
 # your device or check source
-DEFCONFIG=arch_defconfig
+DEFCONFIG=cust_defconfig
 
 # Specify compiler. 
 # 'clang' or 'gcc'
@@ -60,7 +60,7 @@ PTTG=1
 	if [ $PTTG = 1 ]
 	then
 		# Set Telegram Chat ID
-		CHATID="--001456336730"
+		CHATID="-001456336730"
 	fi
 
 # Generate a full DEFCONFIG prior building. 1 is YES | 0 is NO(default)
@@ -133,15 +133,15 @@ DATE=$(TZ=Asia/Jakarta date +"%Y%m%d-%T")
                 CLANG_DIR=$KERNEL_DIR/clang
 
 	msg "|| Cloning Anykernel ||" 
-	git clone --depth 1 --no-single-branch https://github.com/Takanashi-Hikari/AnyKernel3 -b master-x00td
+	git clone --depth 1 --no-single-branch https://github.com/ydner/AnyKernel3 -b master-x00td
 	cp -af AnyKernel3/anykernel-real.sh AnyKernel3/anykernel.sh
-	sed -i "s/kernel.string=.*/kernel.string=$ZIPNAME by Tea-Project/g" AnyKernel3/anykernel.sh
+	sed -i "s/kernel.string=.*/kernel.string=$ZIPNAME by Mari-Project/g" AnyKernel3/anykernel.sh
 }
 
 ##------------------------------------------------------##
 
 exports() {
-	export KBUILD_BUILD_USER="Ydner Illostious Kouno"
+	export KBUILD_BUILD_USER="Mari Illostious Makinami"
 	export ARCH=arm64
 	export SUBARCH=arm64
 
