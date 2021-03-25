@@ -36,17 +36,17 @@ err() {
 KERNEL_DIR="$(pwd)"
 
 # The name of the Kernel, to name the ZIP
-ZIPNAME="Tea_X00T_MATE"
+ZIPNAME="Test"
 
 # The name of the device for which the kernel is built
-MODEL="Asus Max Pro M1"
+MODEL="Redmi Note 9 Pro"
 
 # The codename of the device
-DEVICE="X00TD"
+DEVICE="JOYEUSE"
 
 # The defconfig which should be used. Get it from config.gz from
 # your device or check source
-DEFCONFIG=Tea_defconfig
+DEFCONFIG=cust_defconfig
 
 # Specify compiler. 
 # 'clang' or 'gcc'
@@ -60,7 +60,7 @@ PTTG=1
 	if [ $PTTG = 1 ]
 	then
 		# Set Telegram Chat ID
-		CHATID="-1001154063318"
+		CHATID="-1001456336730"
 	fi
 
 # Generate a full DEFCONFIG prior building. 1 is YES | 0 is NO(default)
@@ -90,7 +90,7 @@ LOG_DEBUG=0
 
 ## Set defaults first
 DISTRO=$(cat /etc/issue)
-KBUILD_BUILD_HOST=MX-Linux 19.3 KDE
+KBUILD_BUILD_HOST=Drone.io
 CI_BRANCH=$(git rev-parse --abbrev-ref HEAD)
 token=$TELEGRAM_TOKEN
 export KBUILD_BUILD_HOST CI_BRANCH
@@ -101,13 +101,13 @@ then
 	if [ -n "$CIRCLECI" ]
 	then
 		export KBUILD_BUILD_VERSION=$CIRCLE_BUILD_NUM
-		export KBUILD_BUILD_HOST="DanteNeverDeath"
+		export KBUILD_BUILD_HOST=Mari Illostious Makinami
 		export CI_BRANCH=$CIRCLE_BRANCH
 	fi
 	if [ -n "$DRONE" ]
 	then
 		export KBUILD_BUILD_VERSION=$DRONE_BUILD_NUMBER
-		export KBUILD_BUILD_HOST=DanteNeverDeath
+		export KBUILD_BUILD_HOST=Mari Illostious Makinami
 		export CI_BRANCH=$DRONE_BRANCH
 	else
 		echo "Not presetting Build Version"
@@ -135,7 +135,7 @@ DATE=$(TZ=Asia/Jakarta date +"%Y%m%d-%T")
 		GCC32_DIR=$KERNEL_DIR/gcc32
 
 	msg "|| Cloning Anykernel ||" 
-	git clone --depth 1 --no-single-branch https://github.com/Daffa06/AnyKernel3.git -b master-x00td
+	git clone --depth 1 --no-single-branch https://github.com/ydner/AnyKernel3 -b master-x00td
 	cp -af AnyKernel3/anykernel-real.sh AnyKernel3/anykernel.sh
 	sed -i "s/kernel.string=.*/kernel.string=$ZIPNAME by Tea-Project/g" AnyKernel3/anykernel.sh
 }
@@ -160,7 +160,7 @@ exports() {
 ##---------------------------------------------------------##
 
 tg_post_msg() {
-	curl -s -X POST "$BOT_MSG_URL" -d chat_id="-1001154063318" \
+	curl -s -X POST "$BOT_MSG_URL" -d chat_id="-1001456336730" \
 	-d "disable_web_page_preview=true" \
 	-d "parse_mode=html" \
 	-d text="$1"
