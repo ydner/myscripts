@@ -39,14 +39,14 @@ KERNEL_DIR="$(pwd)"
 ZIPNAME="Tea-Kernel"
 
 # The name of the device for which the kernel is built
-MODEL="Redmi Note 9 Pro"
+MODEL="Test"
 
 # The codename of the device
-DEVICE="JOYEUSE"
+DEVICE="Test"
 
 # The defconfig which should be used. Get it from config.gz from
 # your device or check source
-DEFCONFIG=cust_defconfig
+DEFCONFIG=XOOTD_defconfig
 
 # Specify compiler. 
 # 'clang' or 'gcc'
