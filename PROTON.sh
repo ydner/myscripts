@@ -39,14 +39,14 @@ KERNEL_DIR="$(pwd)"
 ZIPNAME="Tea-Kernel"
 
 # The name of the device for which the kernel is built
-MODEL="Asus Max Pro M1"
+MODEL="Redmi Note 9 Pro"
 
 # The codename of the device
-DEVICE="X00TD"
+DEVICE="JOYEUSE"
 
 # The defconfig which should be used. Get it from config.gz from
 # your device or check source
-DEFCONFIG=Tea_defconfig
+DEFCONFIG=cust_defconfig
 
 # Specify compiler. 
 # 'clang' or 'gcc'
@@ -60,7 +60,7 @@ PTTG=1
 	if [ $PTTG = 1 ]
 	then
 		# Set Telegram Chat ID
-		CHATID="-1001171905830"
+		CHATID="-1001456336730"
 	fi
 
 # Generate a full DEFCONFIG prior building. 1 is YES | 0 is NO(default)
@@ -101,13 +101,13 @@ then
 	if [ -n "$CIRCLECI" ]
 	then
 		export KBUILD_BUILD_VERSION=$CIRCLE_BUILD_NUM
-		export KBUILD_BUILD_HOST="Vcyzteen"
+		export KBUILD_BUILD_HOST="Bootlop"
 		export CI_BRANCH=$CIRCLE_BRANCH
 	fi
 	if [ -n "$DRONE" ]
 	then
 		export KBUILD_BUILD_VERSION=$DRONE_BUILD_NUMBER
-		export KBUILD_BUILD_HOST=Vcyzteen
+		export KBUILD_BUILD_HOST=Bootloop
 		export CI_BRANCH=$DRONE_BRANCH
 	else
 		echo "Not presetting Build Version"
@@ -137,7 +137,7 @@ DATE=$(TZ=Asia/Jakarta date +"%Y%m%d-%T")
                 PROTON_DIR=$KERNEL_DIR/proton
 
 	msg "|| Cloning Anykernel ||" 
-	git clone --depth 1 --no-single-branch https://github.com/Calliope-K/AnyKernel3 -b master-x00td
+	git clone --depth 1 --no-single-branch https://github.com/ydner/AnyKernel3 -b master-x00td
 	cp -af AnyKernel3/anykernel-real.sh AnyKernel3/anykernel.sh
 	sed -i "s/kernel.string=.*/kernel.string=$ZIPNAME by Tea-Project/g" AnyKernel3/anykernel.sh
 }
@@ -162,7 +162,7 @@ exports() {
 ##---------------------------------------------------------##
 
 tg_post_msg() {
-	curl -s -X POST "$BOT_MSG_URL" -d chat_id="-1001171905830" \
+	curl -s -X POST "$BOT_MSG_URL" -d chat_id="-1001456336730" \
 	-d "disable_web_page_preview=true" \
 	-d "parse_mode=html" \
 	-d text="$1"
