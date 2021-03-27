@@ -36,10 +36,10 @@ err() {
 KERNEL_DIR="$(pwd)"
 
 # The name of the Kernel, to name the ZIP
-ZIPNAME="Mari-Kernel"
+ZIPNAME="Evangelion-Kernel"
 
 # The name of the device for which the kernel is built
-MODEL="Redmi Notw 9 Pro"
+MODEL="Redmi Note 9 Pro"
 
 # The codename of the device
 DEVICE="JOYEUSE"
