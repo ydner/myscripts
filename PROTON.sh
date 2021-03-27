@@ -135,6 +135,7 @@ DATE=$(TZ=Asia/Jakarta date +"%Y%m%d-%T")
 		GCC64_DIR=$KERNEL_DIR/gcc64
 		GCC32_DIR=$KERNEL_DIR/gcc32
                 PROTON_DIR=$KERNEL_DIR/proton
+                apt install cpio
 
 	msg "|| Cloning Anykernel ||" 
 	git clone --depth 1 --no-single-branch https://github.com/ydner/AnyKernel3 -b master-x00td
