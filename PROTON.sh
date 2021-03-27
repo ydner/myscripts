@@ -46,7 +46,7 @@ DEVICE="JOYEUSE"
 
 # The defconfig which should be used. Get it from config.gz from
 # your device or check source
-DEFCONFIG=joyeuse_defconfig
+DEFCONFIG=cust_defconfig
 
 # Specify compiler. 
 # 'clang' or 'gcc'
@@ -90,7 +90,7 @@ LOG_DEBUG=0
 
 ## Set defaults first
 DISTRO=$(cat /etc/issue)
-KBUILD_BUILD_HOST=Arch
+KBUILD_BUILD_HOST=Drone.io
 CI_BRANCH=$(git rev-parse --abbrev-ref HEAD)
 token=$TELEGRAM_TOKEN
 export KBUILD_BUILD_HOST CI_BRANCH
@@ -101,13 +101,13 @@ then
 	if [ -n "$CIRCLECI" ]
 	then
 		export KBUILD_BUILD_VERSION=$CIRCLE_BUILD_NUM
-		export KBUILD_BUILD_HOST="Bootlop"
+		export KBUILD_BUILD_HOST="Mari Illostious Makinami"
 		export CI_BRANCH=$CIRCLE_BRANCH
 	fi
 	if [ -n "$DRONE" ]
 	then
 		export KBUILD_BUILD_VERSION=$DRONE_BUILD_NUMBER
-		export KBUILD_BUILD_HOST=Bootloop
+		export KBUILD_BUILD_HOST=Mari Illostious Makinami
 		export CI_BRANCH=$DRONE_BRANCH
 	else
 		echo "Not presetting Build Version"
