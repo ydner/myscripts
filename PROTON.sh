@@ -46,7 +46,7 @@ DEVICE="Test"
 
 # The defconfig which should be used. Get it from config.gz from
 # your device or check source
-DEFCONFIG=XOOTD_defconfig
+DEFCONFIG=joyeuse_defconfig
 
 # Specify compiler. 
 # 'clang' or 'gcc'
