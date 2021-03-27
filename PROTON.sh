@@ -36,13 +36,13 @@ err() {
 KERNEL_DIR="$(pwd)"
 
 # The name of the Kernel, to name the ZIP
-ZIPNAME="Tea-Kernel"
+ZIPNAME="Mari-Kernel"
 
 # The name of the device for which the kernel is built
-MODEL="Test"
+MODEL="Redmi Notw 9 Pro"
 
 # The codename of the device
-DEVICE="Test"
+DEVICE="JOYEUSE"
 
 # The defconfig which should be used. Get it from config.gz from
 # your device or check source
