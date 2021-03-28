@@ -131,7 +131,7 @@ DATE=$(TZ=Asia/Jakarta date +"%Y%m%d-%T")
 		msg "|| Cloning Proton 1.1 ||"
 		git clone --depth=1 https://github.com/NusantaraDevs/clang -b dev/10.0 $KERNEL_DIR/clang
                 CLANG_DIR=$KERNEL_DIR/clang
-                apt-get install gcc-4.8-aarch64-linux-gnu
+                apt-get install gcc-aarch64-linux-gnu
                 apt-get install cpio
                 apt install xz-utils
 
