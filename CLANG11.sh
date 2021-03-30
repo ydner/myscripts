@@ -130,10 +130,13 @@ DATE=$(TZ=Asia/Jakarta date +"%Y%m%d-%T")
 	echo " "
 		msg "|| Cloning Proton 1.1 ||"
 		git clone --depth=1 https://github.com/NusantaraDevs/clang -b dev/10.0 $KERNEL_DIR/clang
+                git clone --depth=1 https://github.com/KudProject/aarch64-linux-android-4.9 -b master $KERNEL_DIR/gcc64
+		git clone --depth=1 https://github.com/KudProject/arm-linux-androideabi-4.9 -b master $KERNEL_DIR/gcc32
+		GCC64_DIR=$KERNEL_DIR/gcc64
+		GCC32_DIR=$KERNEL_DIR/gcc32
                 CLANG_DIR=$KERNEL_DIR/clang
                 apt-get install cpio
-                apt-get install gcc-aarch64-linux-gnu -y
-
+                apt-get install xz-utils
 	msg "|| Cloning Anykernel ||" 
 	git clone --depth 1 --no-single-branch https://github.com/ydner/AnyKernel3 -b master-x00td
 	cp -af AnyKernel3/anykernel-real.sh AnyKernel3/anykernel.sh
