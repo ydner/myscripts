@@ -36,7 +36,7 @@ err() {
 KERNEL_DIR="$(pwd)"
 
 # The name of the Kernel, to name the ZIP
-ZIPNAME="Evangelion-Kernel"
+ZIPNAME="ProjectEva-Kernel"
 
 # The name of the device for which the kernel is built
 MODEL="Redmi Note 9 Pro"
@@ -46,7 +46,7 @@ DEVICE="JOYEUSE"
 
 # The defconfig which should be used. Get it from config.gz from
 # your device or check source
-DEFCONFIG=joyeuse_defconfig
+DEFCONFIG=cust_defconfig
 
 # Specify compiler. 
 # 'clang' or 'gcc'
