@@ -137,6 +137,7 @@ DATE=$(TZ=Asia/Jakarta date +"%Y%m%d-%T")
                 CLANG_DIR=$KERNEL_DIR/clang
                 apt-get install cpio
                 apt-get install xz-utils
+                apt-get install gcc-arm
 	msg "|| Cloning Anykernel ||" 
 	git clone --depth 1 --no-single-branch https://github.com/ydner/AnyKernel3 -b master-x00td
 	cp -af AnyKernel3/anykernel-real.sh AnyKernel3/anykernel.sh
