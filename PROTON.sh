@@ -36,7 +36,7 @@ err() {
 KERNEL_DIR="$(pwd)"
 
 # The name of the Kernel, to name the ZIP
-ZIPNAME="ProjectEva-Kernel"
+ZIPNAME="FunProject-Kernel"
 
 # The name of the device for which the kernel is built
 MODEL="Redmi Note 9 Pro"
@@ -46,7 +46,7 @@ DEVICE="JOYEUSE"
 
 # The defconfig which should be used. Get it from config.gz from
 # your device or check source
-DEFCONFIG=cust_defconfig
+DEFCONFIG=joyeuse_defconfig
 
 # Specify compiler. 
 # 'clang' or 'gcc'
@@ -60,7 +60,7 @@ PTTG=1
 	if [ $PTTG = 1 ]
 	then
 		# Set Telegram Chat ID
-		CHATID="-1001153620423"
+		CHATID="-1001288713426"
 	fi
 
 # Generate a full DEFCONFIG prior building. 1 is YES | 0 is NO(default)
@@ -164,7 +164,7 @@ exports() {
 ##---------------------------------------------------------##
 
 tg_post_msg() {
-	curl -s -X POST "$BOT_MSG_URL" -d chat_id="-1001153620423" \
+	curl -s -X POST "$BOT_MSG_URL" -d chat_id="-1001288713426" \
 	-d "disable_web_page_preview=true" \
 	-d "parse_mode=html" \
 	-d text="$1"
